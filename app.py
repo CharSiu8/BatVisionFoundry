@@ -144,10 +144,23 @@ def predict(image):
 # interface
 demo = gr.Interface(
     fn=predict,
-    inputs=gr.Image(type="filepath"),
+    inputs=gr.Image(type="filepath", height=200),
     outputs=gr.Text(label="Prediction"),
     title="BatVision",
-    description="Upload an image of Batman or a Batman lookalike to identify the actor. This model accepts: Ben Affleck, Christian Bale, Robert Pattinson, Nite Owl (Watchmen) & Darkwing (Invincible)."
+    description="Upload an image of Batman or a Batman lookalike to identify the actor. This model accepts: Ben Affleck, Christian Bale, Robert Pattinson, Nite Owl (Watchmen) & Darkwing (Invincible).",
+
+examples=[
+    ["UI_test_images/affleck_test1.jpg"],
+    ["UI_test_images/affleck_test2.jpg"],
+    ["UI_test_images/pattinson_test1.jpg"],
+    ["UI_test_images/pattinson_test2.jpg"],
+    ["UI_test_images/bale_test1.jpg"],
+    ["UI_test_images/bale_test2.jpg"],
+    ["UI_test_images/darkwing_test1.jpg"],
+    ["UI_test_images/darkwing_test2.jpg"],
+    ["UI_test_images/niteowl_test1.jpg"],
+    ["UI_test_images/niteowl_test2.jpg"]
+]
 )
 
 # launch
